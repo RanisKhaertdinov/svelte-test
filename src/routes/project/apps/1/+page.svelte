@@ -34,13 +34,13 @@
 	</form>
 	<div class="todos">
 		{#each todoList as item, index}
-			<div class="todo" class:completed={item.completed}>
+			<div class="todo" class:completed={item.Completed}>
 				<span class="todo_text">{item.Task}</span>
 				<div class="todo_buttons">
-					<button class="complete todo_button" on:click={() => complete(index)}>
+					<button class="complete" on:click={() => complete(index)}>
 						<Icon name ='check-mark'/>
 					</button>
-					<button class="delete todo_button" on:click={() => remove(index)}>
+					<button class="delete" on:click={() => remove(index)}>
 						<Icon name ='delete'/>
 					</button>
 				</div>
