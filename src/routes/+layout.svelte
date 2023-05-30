@@ -2,10 +2,9 @@
 	<div class="nav-container">
 		<a href="/" class="nav-logo" title="Back to Homepage">Ranis Haertdinov</a>
 		<div class="nav-links">
-			<a href="/about" class="link">About me</a>
-			<a href="/blog" class="link">Blog</a>
-			<a href="/projects" class="link">My projects</a>
-			<a href="/contact" class="link">Contacts</a>
+			{#each nav as link}
+				<a href={link.href} class='link'>{link.title}</a>
+			{/each}
 		</div>
 	</div>
 </nav>
@@ -14,10 +13,35 @@
 	<slot></slot>
 </div>
 
+<script>
+	const nav = [
+		{
+			title: 'About me',
+			href: '/about'
+		},
+		{
+			title: 'Blog',
+			href: '/blog'
+		},
+		{
+			title: 'Portfolio',
+			href: '/project'
+		},
+		{
+			title: 'Contacts',
+			href: '/contact'
+		},
+		{
+			title: 'temp',
+			href: '/temp'
+		}
+	]
+</script>
 
 <style>
 	.container {
 		max-width: 1400px;
 		margin: 50px auto;
 	}
+
 </style>
